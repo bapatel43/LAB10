@@ -48,6 +48,7 @@ template < class T >
 bool Hybrid<T>::isEmpty()
 {
 	int sz = sldl->size();
+	
 	if(sz == 0)
 	{
 		return true;
@@ -65,22 +66,21 @@ void Hybrid<T>::enqueue(T* item)
     {
       node->setNext(node);
     }
-	/*
+	
     else 
     {
-      node->setNext(tail->getNext());
-      tail->setNext(node);
+      //node->setNext(tail->getNext());
+      //tail->setNext(node);
     }  
 
-    tail = node;  //new node is at back
-	*/
+    //tail = node;  //new node is at back
+	//sldl->add(item);
 }
 
 template < class T >
 T* Hybrid<T>::dequeue()
 {
 	/*
-	
     T* item = NULL;
 
     if (!isEmpty()) 
@@ -103,7 +103,7 @@ T* Hybrid<T>::dequeue()
       delete head;
       sze--;
     }
-
+	//sldl->remove(item);
     return item;
 	*/
 }
@@ -113,8 +113,5 @@ ListDoublyLinkedIterator<T>* Hybrid<T>::iterator()
 {
    return sldl->iterator();
 }
-
-
-
 
 #endif
