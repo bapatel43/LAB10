@@ -16,10 +16,7 @@ class SortedListDoublyLinked
       DoubleNode<T>* findLocationAdd(T* item);
       DoubleNode<T>* findLocationRemove(String* sk);
       DoubleNode<T>* locateNodeRemove(String* sk);
-      DoubleNode<T>* locateNodeAdd(T* item);
-
-      DoubleNode<T>* addDN(T* item);
-      T* remove(DoubleNode<T>* curr);
+      DoubleNode<T>* locateNodeAdd(T* item);	
 
       DoubleNode<T>* findHead();
       DoubleNode<T>* findTail();
@@ -35,10 +32,13 @@ class SortedListDoublyLinked
       int size();
       void removeAll();
 
+	  DoubleNode<T>* addDN(T* item);
+	  
       T* get(String* sk);
       void add(T* item);
       void remove(String* sk);
-
+	  T* remove(DoubleNode<T>* curr);
+	  
       ListDoublyLinkedIterator<T>* iterator();
 
 };
