@@ -62,50 +62,22 @@ void Hybrid<T>::enqueue(T* item)
 {
     DoubleNode<T>* node = new DoubleNode<T>(item);
 
-    if (isEmpty()) 
-    {
-      node->setNext(node);
-    }
-	
-    else 
-    {
-      //node->setNext(tail->getNext());
-      //tail->setNext(node);
-    }  
-
-    //tail = node;  //new node is at back
-	//sldl->add(item);
+	q->enqueue(item);
+	sldl->add(item);
 }
 
 template < class T >
 T* Hybrid<T>::dequeue()
 {
-	/*
     T* item = NULL;
-
-    if (!isEmpty()) 
-    {
-      // queue is not empty; remove front
-      DoubleNode<T>* head = tail->getNext();
-      item = head->getItem();
-
-      if (head == tail) 
-      {  
-        // one node in queue
-        tail->setNext(NULL); 
-        tail = NULL;        
-      }
-      else 
-      {
-        tail->setNext(head->getNext());
-      }  
-
-      delete head;
-      sze--;
-    }
-	//sldl->remove(item);
-    return item;
-	*/
+	
+	item = q->dequeue();
+	
+	DoubleNode<T>* node = new DoubleNode<T>(item);
+	 
+	sldl->remove(node);
+	
+	return item;
 }
 
 template < class T >
